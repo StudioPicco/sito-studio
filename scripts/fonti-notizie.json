@@ -1,6 +1,6 @@
 [
-  { "fonte": "INPS", "url": "https://www.inps.it/it/it.rss.news.xml", "sito": "https://www.inps.it" },
-  { "fonte": "INPS", "url": "https://www.inps.it/it/it.rss.circolari.xml", "sito": "https://www.inps.it" },
-  { "fonte": "Ispettorato del Lavoro", "url": "https://www.ispettorato.gov.it/feed/", "sito": "https://www.ispettorato.gov.it" },
-  { "fonte": "Agenzia delle Entrate", "url": "https://www.fiscooggi.it/rss.xml", "sito": "https://www.agenziaentrate.gov.it" }
+  { "fonte": "INPS", "tipo": "rss", "url": "https://www.inps.it/it/it.rss.news.xml" },
+  { "fonte": "INPS", "tipo": "rss", "url": "https://www.inps.it/it/it.rss.circolari.xml" },
+  { "fonte": "Ispettorato del Lavoro", "tipo": "inl", "url": "https://www.ispettorato.gov.it/comunicazione/comunicati/news-inl/" },
+  { "fonte": "Agenzia delle Entrate", "tipo": "ade", "url": "https://www.agenziaentrate.gov.it/portale/agenzia/agenzia-comunica/novita/aggiornamenti-del-sito" }
 ]
