@@ -1,0 +1,28 @@
+# Aggiorna le notizie in home 4 volte al giorno.
+# Le notizie vanno sul ramo "notizie", che Netlify NON pubblica: nessun credito consumato.
+name: Aggiorna notizie
+on:
+  schedule:
+    - cron: "17 5,9,13,17 * * *"   # 6:17, 10:17, 14:17, 18:17 ora italiana (inverno)
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  notizie:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Leggi i feed
+        run: mkdir out && node scripts/aggiorna-notizie.mjs out/notizie.json
+      - name: Pubblica sul ramo notizie
+        run: |
+          cd out
+          git init -q -b notizie
+          git config user.name "Aggiornamento notizie"
+          git config user.email "actions@users.noreply.github.com"
+          git add notizie.json
+          git commit -q -m "Notizie aggiornate"
+          git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" notizie
