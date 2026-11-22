@@ -1,0 +1,12 @@
+{
+  "aggiornato": "2026-11-19T17:17:00Z",
+  "esempio": true,
+  "notizie": [
+    { "fonte": "INPS", "titolo": "Titolo di esempio: nuova circolare sulle istruzioni per il conguaglio contributivo di fine anno", "link": "https://www.inps.it", "data": "2026-11-19T10:30:00Z" },
+    { "fonte": "Agenzia delle Entrate", "titolo": "Titolo di esempio: approvato il provvedimento con le specifiche tecniche per le comunicazioni", "link": "https://www.agenziaentrate.gov.it", "data": "2026-11-19T08:15:00Z" },
+    { "fonte": "Ispettorato del Lavoro", "titolo": "Titolo di esempio: nota operativa sulla vigilanza in materia di sicurezza nei cantieri", "link": "https://www.ispettorato.gov.it", "data": "2026-11-18T15:00:00Z" },
+    { "fonte": "INPS", "titolo": "Titolo di esempio: messaggio sulle nuove funzionalità del servizio online per le aziende", "link": "https://www.inps.it", "data": "2026-11-18T09:40:00Z" },
+    { "fonte": "Agenzia delle Entrate", "titolo": "Titolo di esempio: chiarimenti in risposta a un interpello sul regime agevolato", "link": "https://www.agenziaentrate.gov.it", "data": "2026-11-17T12:00:00Z" },
+    { "fonte": "Ispettorato del Lavoro", "titolo": "Titolo di esempio: aggiornate le FAQ sulla patente a crediti", "link": "https://www.ispettorato.gov.it", "data": "2026-11-17T10:00:00Z" }
+  ]
+}

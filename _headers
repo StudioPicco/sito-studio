@@ -1,0 +1,4 @@
+# FASE DI PROVA: chiede ai motori di ricerca di non indicizzare il sito.
+# Quando il sito va online su studiopicco.org, ELIMINATE QUESTO FILE.
+/*
+  X-Robots-Tag: noindex, nofollow

@@ -1,0 +1,6 @@
+[
+  { "fonte": "INPS", "url": "https://www.inps.it/it/it.rss.news.xml", "sito": "https://www.inps.it" },
+  { "fonte": "INPS", "url": "https://www.inps.it/it/it.rss.circolari.xml", "sito": "https://www.inps.it" },
+  { "fonte": "Ispettorato del Lavoro", "url": "https://www.ispettorato.gov.it/feed/", "sito": "https://www.ispettorato.gov.it" },
+  { "fonte": "Agenzia delle Entrate", "url": "https://www.fiscooggi.it/rss.xml", "sito": "https://www.agenziaentrate.gov.it" }
+]

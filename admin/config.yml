@@ -1,0 +1,41 @@
+# Pannello staff per le circolari (Decap CMS)
+# Repository GitHub del sito: StudioPicco/sito-studio
+backend:
+  name: github
+  repo: StudioPicco/sito-studio
+  branch: main
+  commit_messages:
+    update: "Aggiornate le circolari"
+
+locale: it
+site_url: /
+display_url: /
+media_folder: "uploads/circolari"
+public_folder: "/uploads/circolari"
+
+collections:
+  - name: circolari
+    label: Circolari
+    editor:
+      preview: false
+    files:
+      - name: elenco
+        label: Elenco circolari
+        file: data/circolari.json
+        fields:
+          - label: Circolari
+            name: circolari
+            widget: list
+            add_to_top: true
+            label_singular: circolare
+            summary: "{{fields.data | date('DD/MM/YYYY')}} — {{fields.titolo}}"
+            fields:
+              - { label: Titolo, name: titolo, widget: string }
+              - { label: Data, name: data, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+              - { label: "Numero (es. 12/2026)", name: numero, widget: string, required: false }
+              - label: Categoria
+                name: categoria
+                widget: select
+                options: ["Lavoro e previdenza", "Fiscale e tributario", "Societario", "Legale", "Comunicazioni dello Studio"]
+              - { label: Testo, name: sintesi, widget: text }
+              - { label: "Allegato PDF (facoltativo)", name: allegato, widget: file, required: false }

@@ -1,0 +1,3 @@
+# Netlify pubblica solo il ramo principale: il ramo "notizie" viene ignorato.
+[build]
+  ignore = "test \"$BRANCH\" = \"notizie\""

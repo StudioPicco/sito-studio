@@ -1,0 +1,20 @@
+{
+  "circolari": [
+    {
+      "titolo": "[Esempio] Scadenze di dicembre per datori di lavoro",
+      "data": "2026-11-15",
+      "numero": "12/2026",
+      "categoria": "Lavoro e previdenza",
+      "sintesi": "Questa è una circolare di esempio: va eliminata o sostituita dal pannello staff.\n\nQui va il testo della circolare. Si può andare a capo e allegare un PDF.",
+      "allegato": ""
+    },
+    {
+      "titolo": "[Esempio] Comunicazione sugli orari di chiusura per le festività",
+      "data": "2026-11-02",
+      "numero": "11/2026",
+      "categoria": "Comunicazioni dello Studio",
+      "sintesi": "Circolare di esempio. Indicare qui i giorni di chiusura dello studio e i recapiti per le urgenze.",
+      "allegato": ""
+    }
+  ]
+}
