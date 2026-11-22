@@ -203,7 +203,7 @@
   .nitem .src.inl{background:#2f5d50}
   .nitem .src.ade{background:#8a6a2f}
   .nitem .meta{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600}
-  .nitem .nt{font-family:var(--serif);font-size:1.22rem;font-weight:600;color:var(--navy);line-height:1.3;margin-top:3px}
+  .nitem .nt{font-family:var(--serif);font-size:1.22rem;font-weight:600;color:var(--navy);line-height:1.3;margin-top:3px;display:-webkit-box!important;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .nitem .go{margin-left:auto;color:var(--gold);flex:none;font-size:1.1rem}
   .nitem .meta{line-height:1.5;display:block}
   @media (max-width:600px){.nitem{gap:14px;padding:18px}.nitem .src{width:40px;height:40px;font-size:.62rem}.nitem .nt{font-size:1.12rem}.nitem .go{position:absolute;right:14px;top:14px}}
@@ -586,7 +586,7 @@
   function renderNews(){
     const list = NEWS.filter(n => !filtro || n.fonte === filtro).slice(0, 8);
     $("#news").innerHTML = list.map(n => { const [s,c] = sigla(n.fonte); return `
-      <a class="nitem" href="${esc(n.link)}" target="_blank" rel="noopener">
+      <a class="nitem" href="${esc(n.link)}" target="_blank" rel="noopener" title="${esc(n.titolo)}">
         <span class="src ${c}" aria-hidden="true">${esc(s)}</span>
         <span><span class="meta">${esc(n.fonte)} · ${esc(quando(n.data))}</span><span class="nt" style="display:block">${esc(n.titolo)}</span></span>
         <span class="go" aria-hidden="true">↗</span>
