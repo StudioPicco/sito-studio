@@ -5,7 +5,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
 
 const OUT = process.argv[2] || "notizie.json";
-const MAX_TOTALE = 12, MAX_PER_FONTE = 5, GIORNI = 45;
+const MAX_TOTALE = 12, MAX_PER_FONTE = 5, MAX_PER_ENTE = 4, GIORNI = 45;
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
 
 export const decode = s => String(s || "")
@@ -83,10 +83,12 @@ async function main() {
       esito.push(`ERR  ${f.fonte} (${f.url}): ${e.message}`);
     }
   }
-  const viste = new Set();
+  // Al massimo MAX_PER_ENTE notizie per ente, così compaiono sempre tutte le fonti
+  const viste = new Set(), perEnte = {};
   const notizie = tutte
     .filter(x => !viste.has(x.link) && viste.add(x.link))
     .sort((a, b) => Date.parse(b.data) - Date.parse(a.data))
+    .filter(x => (perEnte[x.fonte] = (perEnte[x.fonte] || 0) + 1) <= MAX_PER_ENTE)
     .slice(0, MAX_TOTALE);
   console.log(esito.join("\n"));
   if (!notizie.length) { console.error("Nessuna notizia letta: file non aggiornato."); process.exit(1); }
