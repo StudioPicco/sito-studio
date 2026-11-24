@@ -1,3 +1,36 @@
 {
-  "circolari": []
+  "circolari": [
+    {
+      "titolo": "Nuovo Testo Unico IVA: aggiornamento dei riferimenti normativi dal 1° gennaio 2027",
+      "data": "2026-11-23",
+      "numero": "5/2026",
+      "categoria": "Fiscale e tributario",
+      "sintesi": "Dal 1° gennaio 2027 si applica il nuovo Testo Unico IVA (D.Lgs. 19 gennaio 2026, n. 10), che raccoglie in 171 articoli le norme oggi contenute nel D.P.R. 633/1972 e in altre disposizioni. Aliquote, operazioni esenti, reverse charge, split payment e scadenze restano in generale invariati; cambia la numerazione degli articoli e quindi i riferimenti normativi da indicare in fattura e nei codici IVA dei programmi di contabilità. Le aziende sono invitate a verificare entro il 31 dicembre 2026 diciture in fattura, modulistica, contratti e testi presenti sui siti internet.",
+      "allegato": "/uploads/circolari/circolare-05-2026-testo-unico-iva.pdf"
+    },
+    {
+      "titolo": "Richiesta nuovo Bonus Mamme 2026",
+      "data": "2026-11-19",
+      "numero": "4/2026",
+      "categoria": "Lavoro e previdenza",
+      "sintesi": "La legge di bilancio 2026 ha potenziato il Nuovo Bonus Mamme: per le lavoratrici madri con due o più figli l'integrazione sale a 60 euro mensili, fino a un massimo di 720 euro nell'anno. Spetta alle lavoratrici dipendenti e autonome con reddito da lavoro non superiore a 40.000 euro annui, con il figlio più piccolo di età inferiore a 10 anni (madri di due figli) o a 18 anni (madri di tre o più figli). La domanda va presentata all'INPS entro il 31 dicembre 2026, oppure entro il 31 gennaio 2027 se il requisito si perfeziona a dicembre 2026.",
+      "allegato": "/uploads/circolari/circolare-04-2026-bonus-mamme.pdf"
+    },
+    {
+      "titolo": "Lavoro agile: informativa in materia di salute e sicurezza",
+      "data": "2026-04-13",
+      "numero": "2/2026",
+      "categoria": "Lavoro e previdenza",
+      "sintesi": "La legge 11 marzo 2024 n. 36, in vigore dal 7 aprile 2026, impone ai datori di lavoro di consegnare ai lavoratori in smart working un'informativa scritta sui rischi generali e specifici connessi a questa modalità di lavoro. L'inosservanza è sanzionata sia in via amministrativa sia penale. L'informativa va consegnata anche in caso di nuovi accordi di smart working e ripetuta ogni anno; una copia va data al rappresentante dei lavoratori per la sicurezza, se eletto.",
+      "allegato": "/uploads/circolari/circolare-02-2026-lavoro-agile.pdf"
+    },
+    {
+      "titolo": "Versamento della tassa di CCGG per la vidimazione dei libri sociali",
+      "data": "2026-02-26",
+      "numero": "1/2026",
+      "categoria": "Fiscale e tributario",
+      "sintesi": "Con il versamento di imposte, contributi e ritenute del 16 marzo 2026 scade il termine per la tassa annuale di concessione governativa per la vidimazione dei libri sociali delle società di capitali: 309,87 euro per le società con capitale non superiore a 516.456,90 euro, 516,46 euro per quelle con capitale superiore. Il pagamento si effettua con F24, sezione erario, anno di riferimento 2026, codice tributo 7085, ed è compensabile con eventuali crediti.",
+      "allegato": "/uploads/circolari/circolare-01-2026-tassa-ccgg-libri-sociali.pdf"
+    }
+  ]
 }

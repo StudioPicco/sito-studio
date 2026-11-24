@@ -609,6 +609,7 @@
     .catch(() => { $(".news-band").hidden = true; });
 
   // --- Circolari ---
+  const linkify = t => t.replace(/(https?:\/\/[^\s<]*[^\s<.,;:)])/g, u => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
   const fmt = d => { const x = new Date(d); return isNaN(x) ? {g:"",a:""} : { g: x.toLocaleDateString("it-IT",{day:"numeric",month:"long"}), a: x.getFullYear() }; };
   const card = c => { const d = fmt(c.data); return `
     <details class="circ">
@@ -617,7 +618,7 @@
         <div><div class="cat">${esc(c.categoria||"")}</div><div class="t">${esc(c.titolo)}</div></div>
         <span class="chev" aria-hidden="true">▾</span>
       </summary>
-      <div class="body"><p>${esc(c.sintesi)}</p>${c.allegato ? `<a class="btn gold" href="${esc(c.allegato)}" target="_blank" rel="noopener">Scarica l'allegato ↓</a>` : ""}</div>
+      <div class="body"><p>${linkify(esc(c.sintesi))}</p>${c.allegato ? `<a class="btn gold" href="${esc(c.allegato)}" target="_blank" rel="noopener">Scarica l'allegato ↓</a>` : ""}</div>
     </details>`; };
   let ALL = [];
   function render(){
