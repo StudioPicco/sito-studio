@@ -1,4 +1,3 @@
-# FASE DI PROVA: chiede ai motori di ricerca di non indicizzare il sito.
-# Quando il sito va online su studiopicco.org, ELIMINATE QUESTO FILE.
-/*
-  X-Robots-Tag: noindex, nofollow
+# Intestazioni Netlify.
+# Il blocco per i motori di ricerca (X-Robots-Tag: noindex) è stato tolto alla messa online su www.studiopicco.org.
+# Le intestazioni di sicurezza sono in netlify.toml.
