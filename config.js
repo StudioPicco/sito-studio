@@ -8,8 +8,10 @@ window.STUDIO = {
 
   indirizzo: "Piazza della Vittoria 7/14",
   cap: "16121 Genova (GE)",
-  // Posizione esatta dello studio su Google Maps (latitudine,longitudine)
+  // Posizione esatta dello studio su Google Maps (latitudine,longitudine): usata per la mappa nella pagina Contatti
   ricercaMappa: "44.403748,8.944267",
+  // Pulsante "Apri in Google Maps": apre Google Maps sulla scheda dello Studio
+  mapsUrl: "https://maps.google.com/?cid=10700062017663333434",
 
   telefoni: ["010 591418", "010 592750", "010 5702043"],
   email: "reception@studiopicco.com",

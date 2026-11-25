@@ -1,3 +1,18 @@
 # Netlify pubblica solo il ramo principale: il ramo "notizie" viene ignorato.
 [build]
   ignore = "test \"$BRANCH\" = \"notizie\""
+
+# Intestazioni di sicurezza per tutte le pagine (restano anche dopo la messa online definitiva).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+# L'area staff non deve comparire sui motori di ricerca.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

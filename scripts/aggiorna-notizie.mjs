@@ -1,10 +1,10 @@
 // Legge le fonti elencate in fonti-notizie.json e produce notizie.json
 // Tipi di fonte: "rss" (feed RSS/Atom), "inl" (pagina News INL), "ade" (pagina "Tutte le notizie" Agenzia Entrate)
-// Uso: node scripts/aggiorna-notizie.mjs <file-di-uscita>
+// Uso: node scripts/aggiorna-notizie.mjs <file-di-uscita> [notizie-precedenti.json]
+// Se una fonte non risponde, vengono riprese le notizie precedenti dello stesso ente.
 import { readFile, writeFile } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
 
-const OUT = process.argv[2] || "notizie.json";
 const MAX_TOTALE = 12, MAX_PER_FONTE = 5, MAX_PER_ENTE = 4, GIORNI = 45;
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36";
 
@@ -61,15 +61,34 @@ export function parseAde(html, base) {
   return out;
 }
 
-async function main() {
+// Scarica una fonte, con 2 nuovi tentativi in caso di errore di rete o del server
+async function scarica(url, tentativi = 3) {
+  let errore;
+  for (let i = 1; i <= tentativi; i++) {
+    try {
+      const r = await fetch(url, { headers: { "User-Agent": UA, "Accept-Language": "it-IT,it;q=0.9" }, signal: AbortSignal.timeout(25000) });
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return await r.text();
+    } catch (e) {
+      errore = e;
+      if (i < tentativi) await new Promise(ok => setTimeout(ok, 5000 * i));
+    }
+  }
+  throw errore;
+}
+
+async function leggiPrecedenti(file) {
+  if (!file) return [];
+  try { return JSON.parse(await readFile(file, "utf8")).notizie || []; } catch { return []; }
+}
+
+export async function main(OUT = "notizie.json", PRECEDENTI = "") {
   const fonti = JSON.parse(await readFile(new URL("./fonti-notizie.json", import.meta.url), "utf8"));
   const limite = Date.now() - GIORNI * 864e5, domani = Date.now() + 864e5;
-  const tutte = [], esito = [];
+  const tutte = [], esito = [], entiInErrore = new Set();
   for (const f of fonti) {
     try {
-      const r = await fetch(f.url, { headers: { "User-Agent": UA, "Accept-Language": "it-IT,it;q=0.9" }, signal: AbortSignal.timeout(25000) });
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      const testo = await r.text();
+      const testo = await scarica(f.url);
       const lettore = f.tipo === "inl" ? parseInl : f.tipo === "ade" ? parseAde : parseRss;
       const visti = new Set();
       const items = lettore(testo, f.url)
@@ -79,9 +98,19 @@ async function main() {
         .slice(0, MAX_PER_FONTE);
       items.forEach(x => tutte.push({ fonte: f.fonte, titolo: x.titolo, link: x.link, data: new Date(x.ts).toISOString() }));
       esito.push(`${items.length ? "OK " : "VUOTO"}  ${f.fonte} (${f.url}): ${items.length} notizie`);
+      if (!items.length) entiInErrore.add(f.fonte);
     } catch (e) {
       esito.push(`ERR  ${f.fonte} (${f.url}): ${e.message}`);
+      console.log(`::warning::Fonte non raggiungibile: ${f.fonte} (${e.message}). Uso le notizie precedenti di questo ente.`);
+      entiInErrore.add(f.fonte);
     }
+  }
+  // Fonti che oggi non hanno risposto: si ripropongono le notizie precedenti dello stesso ente
+  if (entiInErrore.size) {
+    const precedenti = (await leggiPrecedenti(PRECEDENTI))
+      .filter(x => entiInErrore.has(x.fonte) && /^https?:\/\//i.test(x.link || "") && Date.parse(x.data) >= limite);
+    precedenti.forEach(x => tutte.push({ fonte: x.fonte, titolo: x.titolo, link: x.link, data: x.data }));
+    if (precedenti.length) esito.push(`RIPRESE ${precedenti.length} notizie precedenti di: ${[...entiInErrore].join(", ")}`);
   }
   // Al massimo MAX_PER_ENTE notizie per ente, così compaiono sempre tutte le fonti
   const viste = new Set(), perEnte = {};
@@ -96,4 +125,4 @@ async function main() {
   console.log(`Scritte ${notizie.length} notizie in ${OUT}`);
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) await main();
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) await main(process.argv[2], process.argv[3]);

@@ -22,7 +22,7 @@
 <link rel="preload" href="fonts/cinzel.woff" as="font" type="font/woff" crossorigin>
 <link rel="preload" href="fonts/sourcesans.woff" as="font" type="font/woff" crossorigin>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Studio Picco","description":"Consulenza societaria, tributaria, del lavoro e legale a Genova.","url":"https://www.studiopicco.org/","image":"https://www.studiopicco.org/img/anteprima.jpg","email":"reception@studiopicco.com","telephone":"+39 010 591418","vatID":"IT01177950993","address":{"@type":"PostalAddress","streetAddress":"Piazza della Vittoria 7/14","postalCode":"16121","addressLocality":"Genova","addressRegion":"GE","addressCountry":"IT"},"geo":{"@type":"GeoCoordinates","latitude":44.403748,"longitude":8.944267},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"18:30"}],"areaServed":"Genova"}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Studio Picco","description":"Consulenza societaria, tributaria, del lavoro e legale a Genova.","url":"https://www.studiopicco.org/","image":"https://www.studiopicco.org/img/anteprima.jpg","email":"reception@studiopicco.com","telephone":"+39 010 591418","vatID":"IT01177950993","address":{"@type":"PostalAddress","streetAddress":"Piazza della Vittoria 7/14","postalCode":"16121","addressLocality":"Genova","addressRegion":"GE","addressCountry":"IT"},"geo":{"@type":"GeoCoordinates","latitude":44.403748,"longitude":8.944267},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"12:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"14:30","closes":"18:30"}],"hasMap":"https://maps.google.com/?cid=10700062017663333434","areaServed":"Genova"}
 </script>
 <style>
   @font-face{font-family:"Cinzel";src:url(fonts/cinzel.woff) format("woff");font-weight:400 900;font-style:normal;font-display:swap}
@@ -32,7 +32,7 @@
   :root{
     --navy:#13213c; --navy-2:#1e3157; --ivory:#f7f3ec; --ivory-2:#efe8dc; --white:#fffdf9;
     --gold:#b38b45; --gold-2:#d2b073; --gold-text:#8a6422; --ink:#1b2333; --muted:#666d7a; --line:#e2d8c6;
-    --teal:#138f7a;
+    --teal:#138f7a; --teal-text:#0f7a68;
     --caps:"Cinzel", "Trajan Pro", Georgia, serif;
     --serif:"Cormorant Garamond", Garamond, Georgia, serif;
     --sans:"Source Sans 3", system-ui, sans-serif;
@@ -66,7 +66,7 @@
   .brand small{font-family:var(--caps);font-size:.72rem;font-weight:500;letter-spacing:.34em;color:var(--gold-text);margin-top:4px}
   nav ul{list-style:none;display:flex;gap:4px;margin:0;padding:0}
   nav a{display:block;padding:10px 16px;text-decoration:none;font-family:var(--caps);font-size:.8rem;letter-spacing:.12em;color:var(--navy);border-bottom:1.5px solid transparent}
-  nav a:hover{color:var(--gold)}
+  nav a:hover{color:var(--gold-text)}
   nav a[aria-current="page"]{border-bottom-color:var(--gold);color:var(--gold-text)}
   .menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);padding:9px 14px;font:600 .75rem var(--caps);letter-spacing:.12em;color:var(--navy);cursor:pointer}
   @media (max-width:860px){
@@ -99,9 +99,9 @@
   .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;text-decoration:none;font:500 .78rem var(--caps);letter-spacing:.14em;border:1px solid var(--navy);color:var(--navy);background:none;cursor:pointer;transition:all .2s}
   .btn:hover{background:var(--navy);color:#fff}
   .btn.primary{background:var(--navy);color:#fff}
-  .btn.primary:hover{background:var(--gold);border-color:var(--gold)}
-  .btn.gold{border-color:var(--gold);color:var(--gold)}
-  .btn.gold:hover{background:var(--gold);color:#fff}
+  .btn.primary:hover{background:var(--gold-text);border-color:var(--gold-text)}
+  .btn.gold{border-color:var(--gold);color:var(--gold-text)}
+  .btn.gold:hover{background:var(--gold-text);border-color:var(--gold-text);color:#fff}
 
   /* Soci */
   .soci{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
@@ -160,7 +160,7 @@
   .story{display:grid;grid-template-columns:1.5fr 1fr;gap:64px;align-items:start}
   @media (max-width:900px){.story{grid-template-columns:1fr;gap:40px}}
   .story-text p{font-family:var(--serif);font-size:1.25rem;line-height:1.6;color:#2a3242}
-  .dropcap::first-letter{float:left;font-family:var(--caps);font-size:3.6rem;line-height:.9;padding:6px 10px 0 0;color:var(--gold)}
+  .dropcap::first-letter{float:left;font-family:var(--caps);font-size:3.6rem;line-height:.9;padding:6px 10px 0 0;color:#9a7330}
   .timeline{list-style:none;margin:0;padding:8px 0 0 28px;border-left:1px solid var(--gold-2);position:sticky;top:110px}
   .timeline li{position:relative;padding:0 0 26px}
   .timeline li::before{content:"";position:absolute;left:-33px;top:9px;width:9px;height:9px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 0 4px var(--ivory)}
@@ -182,7 +182,7 @@
   .page-head p.lead{max-width:640px;margin:0 auto;color:#4f5666;font-family:var(--serif);font-size:1.3rem;font-style:italic}
 
   .doc{max-width:780px;margin:0 auto;padding:64px 0 90px}
-  .doc h2{font-size:1.25rem;margin:2.2em 0 .4em}
+  .doc h2{font-size:1.25rem;margin:2.2em 0 .4em;scroll-margin-top:100px}
   .doc p,.doc li{color:#3a4254}
   .doc ul{padding-left:1.2em}
   .doc .tw{overflow-x:auto}
@@ -217,7 +217,8 @@
   .contact{display:grid;grid-template-columns:1fr 1fr;gap:28px}
   @media (max-width:900px){.contact{grid-template-columns:1fr}}
   .card{background:var(--white);border:1px solid var(--line);padding:36px}
-  .card h3{margin-bottom:12px}
+  .card h3,.card h2.h3{margin-bottom:12px}
+  h2.h3{font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:.98rem;line-height:1.15}
   .row{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--line)}
   .row:last-child{border-bottom:0}
   .row span:first-child{color:var(--muted)}
@@ -241,7 +242,7 @@
   .news-band{background:var(--ivory)}
   .chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:28px 0 26px}
   .chip{font:500 .72rem var(--caps);letter-spacing:.12em;padding:9px 16px;border:1px solid var(--line);background:var(--white);color:var(--navy);cursor:pointer}
-  .chip[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+  .chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
   .news{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
   @media (max-width:820px){.news{grid-template-columns:1fr}}
   .nitem{display:flex;gap:18px;align-items:flex-start;padding:20px 22px;background:var(--white);border:1px solid var(--line);text-decoration:none;transition:all .2s;position:relative}
@@ -261,12 +262,15 @@
   .cookie p{margin:0;font-size:.9rem;color:var(--ink)}
   .cookie .btns{flex:none}
   @media (max-width:700px){.cookie{flex-direction:column;align-items:stretch}}
-  footer{background:var(--navy);color:#c7cfdd;padding:60px 0 30px;font-size:.92rem;border-top:3px solid var(--gold)}
+  /* Il riquadro "Powered by Netlify" (in basso a destra) non deve coprire banner e link del piè di pagina */
+  @media (max-width:1200px){.cookie{bottom:84px}}
+  footer{background:var(--navy);color:#c7cfdd;padding:60px 0 96px;font-size:.92rem;border-top:3px solid var(--gold)}
   footer .cols{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
   @media (max-width:820px){footer .cols{grid-template-columns:1fr}}
   footer .fb{font-family:var(--serif);font-size:1.9rem;color:#fff;line-height:1}
   footer .fs{font-family:var(--caps);letter-spacing:.38em;font-size:.68rem;color:var(--gold-2);margin:6px 0 14px}
   footer a{color:#c7cfdd}
+  footer .ai-note{margin:14px 0 0;font-size:.76rem;color:#8f9bb2}
   footer .legalbar{border-top:1px solid #2b3c5e;margin-top:40px;padding-top:20px;font-size:.8rem;color:#8f9bb2;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 </style>
 </head>
@@ -276,8 +280,8 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#home"><b data-k="nome"></b><small>GENOVA</small></a>
-    <button class="menu-btn" aria-label="Apri menu" onclick="document.querySelector('nav ul').classList.toggle('open')">MENU</button>
-    <nav><ul>
+    <button type="button" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="menu">MENU</button>
+    <nav aria-label="Menu principale"><ul id="menu">
       <li><a href="#home">Home</a></li>
       <li><a href="#chi-siamo">Chi siamo</a></li>
       <li><a href="#servizi">Servizi</a></li>
@@ -308,7 +312,7 @@
 
   <section>
     <div class="wrap">
-      <div class="center"><div class="kicker">I soci</div><div class="rule short"><i></i></div></div>
+      <div class="center"><h2 class="kicker" style="margin:0">I soci</h2><div class="rule short"><i></i></div></div>
       <div class="soci" data-soci="short" style="margin-top:36px"></div>
     </div>
   </section>
@@ -317,7 +321,7 @@
     <div class="wrap">
       <div class="center"><div class="kicker">Dalle istituzioni</div><h2 style="margin-top:12px">Notizie in evidenza</h2><div class="rule short"><i></i></div>
       <p class="muted">Gli ultimi aggiornamenti pubblicati da INPS, Ispettorato del Lavoro e Agenzia delle Entrate.</p></div>
-      <div class="chips" id="news-chips" role="tablist" aria-label="Filtra per fonte"></div>
+      <div class="chips" id="news-chips" role="group" aria-label="Filtra per fonte"></div>
       <div class="news" id="news"></div>
       <p class="news-foot" id="news-foot"></p>
     </div>
@@ -351,14 +355,14 @@
         <p>Nel 1968, con il decesso di quest'ultimo, lo Studio cambia denominazione in quella attuale di "Studio Picco" sotto la direzione del Dott. Ing. Fernando Picco e con l'ausilio, a partire dal 1978, dei figli Gianfranco e Gianandrea. Questi ultimi vengono ufficialmente associati nell'anno 2001 e continuano a tutt'oggi l'attività del fondatore, deceduto nel 2007.</p>
         <p>A partire dal 2020 entrano in Studio Matteo e Gabriele, figli di Gianandrea e Gianfranco, portando avanti la terza generazione della famiglia Picco; nel 2026 Matteo diventa associato.</p>
         <p>Nel corso degli anni lo Studio, dedicato inizialmente alla consulenza tributaria e fiscale, amplia la sua attività offrendo e specializzandosi anche nella consulenza del lavoro, societaria e nella revisione contabile.</p>
-        <p>Per venire incontro alle esigenze delle piccole e medie imprese clienti, viene creato nel 1981 un autonomo centro servizi, la Secal S.r.l., atto a fornire prestazioni di elaborazione di tenuta contabilità, libri paga ed attualmente tutti i servizi telematici necessari per la predisposizione degli adempimenti fiscali, amministrativi ed in materia di lavoro.</p>
+        <p>Per venire incontro alle esigenze delle piccole e medie imprese clienti, viene creato nel 1981 un autonomo centro servizi, la SECAL S.r.l., atto a fornire prestazioni di elaborazione di tenuta contabilità, libri paga ed attualmente tutti i servizi telematici necessari per la predisposizione degli adempimenti fiscali, amministrativi ed in materia di lavoro.</p>
         <p>L'attività dello Studio si amplia inoltre fornendo servizi e consulenza legale grazie alla qualifica di una parte degli associati ed alla presenza continuativa in studio di legali esterni.</p>
       </div>
       <ol class="timeline" aria-label="Le tappe dello Studio">
         <li><b>Anni '50</b><span>Nasce lo Studio Boragine, con l'avv. Michele Boragine e poi l'avv. Paolo Boragine</span></li>
         <li><b>1968</b><span>Diventa "Studio Picco", sotto la direzione del Dott. Ing. Fernando Picco</span></li>
         <li><b>1978</b><span>Entrano in Studio Gianfranco e Gianandrea Picco</span></li>
-        <li><b>1981</b><span>Nasce Secal S.r.l., il centro servizi dello Studio</span></li>
+        <li><b>1981</b><span>Nasce SECAL S.r.l., il centro servizi dello Studio</span></li>
         <li><b>2001</b><span>Gianfranco e Gianandrea Picco diventano associati</span></li>
         <li><b>Dal 2020</b><span>Entrano in Studio Matteo e Gabriele Picco</span></li>
         <li><b>2026</b><span>Matteo Picco diventa associato</span></li>
@@ -393,7 +397,7 @@
       <div class="panel secal">
         <img class="secal-logo" src="img/secal.jpg" alt="SECAL S.r.l. — Centro Servizi Elaborazione Dati">
         <div>
-          <div class="kicker" style="color:var(--teal)">La società di servizi</div>
+          <div class="kicker" style="color:var(--teal-text)">La società di servizi</div>
           <p class="muted" style="margin:10px 0 0">Il centro servizi dello Studio dal 1981: tenuta della contabilità, libri paga e servizi telematici per gli adempimenti fiscali, amministrativi e in materia di lavoro.</p>
           <p style="font-size:.85rem;color:var(--muted);margin:10px 0 0" id="secal-info"></p>
         </div>
@@ -461,12 +465,12 @@
   <section>
     <div class="wrap contact">
       <div class="card">
-        <h3>Recapiti</h3>
+        <h2 class="h3">Recapiti</h2>
         <div class="row"><span>Indirizzo</span><span><span data-k="indirizzo"></span><br><span data-k="cap"></span></span></div>
         <div class="row"><span>Telefono</span><span data-tels></span></div>
         <div class="row"><span>Email</span><span><a data-mail="email"></a></span></div>
         <div class="row"><span>PEC</span><span><a data-mail="pec"></a></span></div>
-        <h3 style="margin-top:30px">Orari</h3>
+        <h2 class="h3" style="margin-top:30px">Orari</h2>
         <div id="orari"></div>
       </div>
       <div style="display:flex;flex-direction:column;gap:16px">
@@ -474,7 +478,7 @@
           <svg class="pin" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 29s9-8.2 9-15a9 9 0 10-18 0c0 6.8 9 15 9 15z"/><circle cx="16" cy="14" r="3.4"/></svg>
           <div class="addr"><span data-k="indirizzo"></span><br><span data-k="cap"></span></div>
           <p>Per visualizzare la mappa di Google è necessario accettare i cookie di terze parti.</p>
-          <button class="btn" data-consent="all">Accetta e mostra la mappa</button>
+          <button type="button" class="btn" data-consent="all">Accetta e mostra la mappa</button>
         </div></div>
         <a class="btn primary" id="maps-link" href="#" target="_blank" rel="noopener" style="align-self:flex-start">Apri in Google Maps ↗</a>
       </div>
@@ -483,7 +487,7 @@
   <section class="band" style="padding-top:72px">
     <div class="wrap">
       <div class="center"><div class="kicker">Scrivici</div><h2 style="margin-top:12px">I nostri uffici</h2><div class="rule short"><i></i></div>
-      <p class="muted">Per una risposta più rapida, scrivete direttamente all'ufficio di riferimento.</p></div>
+      <p class="muted">Per una risposta più rapida, scrivi direttamente all'ufficio di riferimento.</p></div>
       <div class="uffici" id="uffici"></div>
       <p class="photo-note">Foto della testata: <a href="https://commons.wikimedia.org/wiki/File:Piazza_della_Vittoria_@emanuelepisano.jpg" target="_blank" rel="noopener">Piazza della Vittoria</a> di Pisanoemanuele, Wikimedia Commons, licenza <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.it" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Immagine ritagliata e ritoccata nei colori, distribuita con la stessa licenza.</p>
     </div>
@@ -519,22 +523,25 @@
     <p>Il conferimento dei dati è facoltativo, ma senza di essi non possiamo rispondere alle richieste.</p>
 
     <h2>Destinatari e trasferimenti</h2>
-    <p>I dati non sono diffusi. Possono essere trattati dai professionisti e dai collaboratori dello Studio e da fornitori che agiscono come responsabili del trattamento, in particolare il servizio di hosting del sito (Netlify, Inc.) e il fornitore del servizio di posta elettronica (Aruba S.p.A., con sede in Italia). Alcuni fornitori hanno sede fuori dallo Spazio economico europeo (in particolare negli Stati Uniti): in tal caso il trasferimento avviene sulla base di una decisione di adeguatezza della Commissione europea (EU-US Data Privacy Framework, a cui aderisce il fornitore) o di clausole contrattuali standard.</p>
-    <p>Le notizie nella home page sono caricate dal sito di GitHub, da cui il browser scarica un file pubblico: GitHub può quindi ricevere dati tecnici della connessione (come l'indirizzo IP). L'accesso all'area riservata allo staff avviene tramite GitHub e non riguarda i visitatori.</p>
+    <p>I dati non sono diffusi. Possono essere trattati dalle persone autorizzate dello Studio (professionisti, collaboratori e personale di segreteria) e da fornitori che agiscono come responsabili del trattamento: il servizio di hosting del sito (Netlify, Inc., Stati Uniti) e il fornitore della posta elettronica (Aruba S.p.A., Italia).</p>
+    <p>Le notizie nella home page vengono scaricate dal browser direttamente da GitHub (GitHub, Inc., Stati Uniti), dove sono pubblicate in un file: GitHub riceve quindi i dati tecnici della connessione, come l'indirizzo IP. La mappa della pagina Contatti, solo se accetti, è fornita da Google (Google LLC, Stati Uniti). L'accesso all'area riservata allo staff avviene tramite GitHub e non riguarda i visitatori.</p>
+    <p>Per i fornitori con sede negli Stati Uniti il trasferimento dei dati avviene sulla base della decisione di adeguatezza della Commissione europea relativa all'EU-US Data Privacy Framework, a cui questi fornitori aderiscono, o delle clausole contrattuali standard approvate dalla Commissione.</p>
 
     <h2>Conservazione</h2>
     <p>I dati tecnici di navigazione (registri di accesso, compreso l'indirizzo IP) sono conservati dal fornitore di hosting per il tempo strettamente necessario al funzionamento e alla sicurezza del servizio. Le comunicazioni sono conservate per il tempo necessario a gestire la richiesta e, se ne nasce un rapporto professionale, per i termini previsti dalla legge.</p>
 
     <h2 id="cookie-info">Cookie</h2>
-    <p>I cookie sono piccoli file che i siti salvano nel browser. Il sito dello Studio Picco non usa cookie di profilazione né strumenti di statistica o pubblicità.</p>
+    <p>I cookie sono piccoli file che i siti salvano nel browser; la memoria locale del browser funziona in modo simile. Il sito dello Studio Picco non usa cookie di profilazione né strumenti di statistica o di tracciamento pubblicitario.</p>
 
     <h3 class="sub">Cosa usa questo sito</h3>
     <div class="tw"><table>
       <tr><th>Strumento</th><th>Finalità</th><th>Tipo</th><th>Durata</th></tr>
       <tr><td>Memoria locale del browser <code>studiopicco-cookie-consent</code></td><td>Ricordare la tua scelta sui cookie</td><td>Tecnico, necessario (non richiede consenso)</td><td>Fino a cancellazione dei dati del browser</td></tr>
+      <tr><td>Memoria locale del browser <code>nl-hud:public:v1</code>, impostata dal servizio di hosting (Netlify)</td><td>Ricordare che hai nascosto il riquadro "Powered by Netlify"; viene salvata solo se lo nascondi</td><td>Tecnico (non richiede consenso)</td><td>7 giorni</td></tr>
       <tr><td>Google Maps (incorporamento della mappa)</td><td>Mostrare la mappa dello Studio nella pagina Contatti</td><td>Terze parti, solo con il tuo consenso</td><td>Secondo la policy di Google</td></tr>
     </table></div>
     <p>Finché non accetti, la mappa non viene caricata e nessun dato è inviato a Google: compare solo un segnaposto con il pulsante "Apri in Google Maps", che apre il servizio in una nuova scheda.</p>
+    <p>Il riquadro "Powered by Netlify", in basso a destra, è inserito automaticamente dal servizio di hosting e non raccoglie dati; se lo selezioni, mostra un invito a usare Netlify, il cui sito si apre solo se scegli di andarci.</p>
     <p>I caratteri tipografici sono ospitati direttamente sul sito e non vengono scaricati da servizi esterni.</p>
 
     <h3 class="sub">Come gestire le preferenze</h3>
@@ -542,6 +549,8 @@
 
     <h2>I tuoi diritti</h2>
     <p>Puoi chiedere in qualsiasi momento l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento, la portabilità e opporti al trattamento (artt. 15-22 GDPR), scrivendo agli indirizzi indicati sopra. Puoi inoltre revocare il consenso già prestato e proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>).</p>
+    <h2>Altre informazioni</h2>
+    <p>Non effettuiamo profilazione né prendiamo decisioni basate unicamente su trattamenti automatizzati. Eventuali modifiche a questa informativa saranno pubblicate in questa pagina, con la nuova data di aggiornamento.</p>
     <p class="muted">Il trattamento dei dati dei clienti dello Studio nell'ambito degli incarichi professionali è disciplinato da apposita informativa consegnata al momento del conferimento dell'incarico.</p>
   </div></div>
 </div>
@@ -559,14 +568,15 @@
       <span>© <span id="y"></span> Studio Picco · P.IVA <span data-k="piva"></span></span>
       <span><a href="#privacy">Privacy e cookie</a> · <a href="#" id="cookie-prefs">Preferenze cookie</a> · <a href="admin/">Area staff</a></span>
     </div>
+    <p class="ai-note">Le immagini di sfondo del sito sono state realizzate con l'intelligenza artificiale, tranne la foto di Piazza della Vittoria.</p>
   </div>
 </footer>
 
 <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Informativa sui cookie" hidden>
   <p>Questo sito utilizza solo cookie tecnici e, previo consenso, i cookie di terze parti di Google Maps per mostrare la mappa dello Studio. Puoi modificare la scelta in qualsiasi momento da "Preferenze cookie" in fondo alla pagina. <a href="#cookie-info">Informativa completa</a></p>
   <div class="btns" style="justify-content:flex-end">
-    <button class="btn" data-consent="essential">Solo necessari</button>
-    <button class="btn primary" data-consent="all">Accetta tutti</button>
+    <button type="button" class="btn primary" data-consent="essential">Solo necessari</button>
+    <button type="button" class="btn primary" data-consent="all">Accetta tutti</button>
   </div>
 </div>
 
@@ -663,6 +673,7 @@
   function applyConsent(v){
     $("#cookie").hidden = !!v;
     if (v === "all") loadMap();
+    else { const f = $("#map iframe"); if (f) f.remove(); }
   }
   $$("[data-consent]").forEach(b => b.addEventListener("click", () => { setC(b.dataset.consent); applyConsent(b.dataset.consent); }));
   $("#cookie-prefs").addEventListener("click", e => { e.preventDefault(); $("#cookie").hidden = false; });
@@ -670,7 +681,11 @@
 
   // --- Navigazione ---
   const views = ["home","chi-siamo","servizi","circolari","contatti","privacy"];
-  function route(){
+  const titoli = { "chi-siamo": "Chi siamo", servizi: "Servizi", circolari: "Circolari", contatti: "Contatti", privacy: "Privacy e cookie" };
+  const titoloBase = document.title;
+  const menuBtn = $(".menu-btn");
+  menuBtn.addEventListener("click", () => { const aperto = $("nav ul").classList.toggle("open"); menuBtn.setAttribute("aria-expanded", String(aperto)); });
+  function route(ev){
     let h = location.hash.replace("#","");
     const toCookie = h === "cookie-info";
     if (toCookie) h = "privacy";
@@ -678,6 +693,9 @@
     $$(".view").forEach(el => el.classList.toggle("active", el.id === "v-" + v));
     $$("nav a").forEach(a => { if (a.getAttribute("href") === "#" + v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
     $("nav ul").classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    document.title = titoli[v] ? `${titoli[v]} · Studio Picco · Genova` : titoloBase;
+    if (ev) $("main").focus({ preventScroll: true });
     if (toCookie) { const c = document.getElementById("cookie-info"); if (c) { c.scrollIntoView(); return; } }
     window.scrollTo(0,0);
   }
@@ -700,7 +718,7 @@
         <span><span class="meta">${esc(n.fonte)} · ${esc(quando(n.data))}</span><span class="nt" style="display:block">${esc(n.titolo)}</span></span>
         <span class="go" aria-hidden="true">↗</span>
       </a>`; }).join("");
-    $$("#news-chips .chip").forEach(c => c.setAttribute("aria-selected", String(c.dataset.f === filtro)));
+    $$("#news-chips .chip").forEach(c => c.setAttribute("aria-pressed", String(c.dataset.f === filtro)));
   }
   fetch(remoto ? N.url : "data/notizie-esempio.json", {cache:"no-store"})
     .then(r => r.ok ? r.json() : Promise.reject())
@@ -708,7 +726,7 @@
       NEWS = (j.notizie||[]).filter(n => /^https?:\/\//.test(n.link));
       if (!NEWS.length) throw 0;
       const fonti = [...new Set(NEWS.map(n => n.fonte))];
-      $("#news-chips").innerHTML = [["","Tutte"], ...fonti.map(f=>[f,f])].map(([v,l]) => `<button class="chip" role="tab" data-f="${esc(v)}">${esc(l)}</button>`).join("");
+      $("#news-chips").innerHTML = [["","Tutte"], ...fonti.map(f=>[f,f])].map(([v,l]) => `<button type="button" class="chip" aria-pressed="false" data-f="${esc(v)}">${esc(l)}</button>`).join("");
       $$("#news-chips .chip").forEach(c => c.addEventListener("click", () => { filtro = c.dataset.f; renderNews(); }));
       const agg = new Date(j.aggiornato);
       $("#news-foot").innerHTML = (j.esempio ? `<span class="demo">Anteprima</span>Titoli di esempio: sul sito pubblicato compariranno le notizie reali. ` : "")
