@@ -5,10 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Studio Picco · Genova · Consulenza societaria, tributaria e del lavoro</title>
 <meta name="description" content="Studio Picco, Genova: consulenti del lavoro, revisori legali e avvocati. Consulenza societaria, tributaria, del lavoro e previdenziale; assistenza e consulenza legale.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://www.studiopicco.org/">
+<meta name="theme-color" content="#13213c">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Studio Picco">
+<meta property="og:title" content="Studio Picco · Genova · Consulenza societaria, tributaria e del lavoro">
+<meta property="og:description" content="Consulenti del lavoro, revisori legali e avvocati a Genova: da tre generazioni al fianco di imprese, professionisti e famiglie.">
+<meta property="og:url" content="https://www.studiopicco.org/">
+<meta property="og:image" content="https://www.studiopicco.org/img/anteprima.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/cormorant.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/cinzel.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="fonts/sourcesans.woff" as="font" type="font/woff" crossorigin>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Studio Picco","description":"Consulenza societaria, tributaria, del lavoro e legale a Genova.","url":"https://www.studiopicco.org/","image":"https://www.studiopicco.org/img/anteprima.jpg","email":"reception@studiopicco.com","telephone":"+39 010 591418","vatID":"IT01177950993","address":{"@type":"PostalAddress","streetAddress":"Piazza della Vittoria 7/14","postalCode":"16121","addressLocality":"Genova","addressRegion":"GE","addressCountry":"IT"},"geo":{"@type":"GeoCoordinates","latitude":44.403748,"longitude":8.944267},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"18:30"}],"areaServed":"Genova"}
+</script>
 <style>
+  @font-face{font-family:"Cinzel";src:url(fonts/cinzel.woff) format("woff");font-weight:400 900;font-style:normal;font-display:swap}
+  @font-face{font-family:"Cormorant Garamond";src:url(fonts/cormorant.woff) format("woff");font-weight:300 700;font-style:normal;font-display:swap}
+  @font-face{font-family:"Cormorant Garamond";src:url(fonts/cormorant-italic.woff) format("woff");font-weight:300 700;font-style:italic;font-display:swap}
+  @font-face{font-family:"Source Sans 3";src:url(fonts/sourcesans.woff) format("woff");font-weight:200 900;font-style:normal;font-display:swap}
   :root{
     --navy:#13213c; --navy-2:#1e3157; --ivory:#f7f3ec; --ivory-2:#efe8dc; --white:#fffdf9;
     --gold:#b38b45; --gold-2:#d2b073; --gold-text:#8a6422; --ink:#1b2333; --muted:#666d7a; --line:#e2d8c6;
@@ -55,6 +75,10 @@
     nav ul.open{display:flex}
   }
 
+  a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  .skip{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:10px 18px;z-index:100}
+  .skip:focus{left:8px}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important;scroll-behavior:auto !important}}
   .view{display:none}
   .view.active{display:block;animation:fade .4s ease}
   @keyframes fade{from{opacity:0}to{opacity:1}}
@@ -148,7 +172,7 @@
     background:var(--bg,none) var(--pos,center)/cover no-repeat var(--ivory)}
   .page-head::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 75% at 50% 50%,rgba(250,247,241,.92) 0%,rgba(250,247,241,.78) 55%,rgba(250,247,241,.28) 100%)}
   .page-head .wrap{position:relative}
-  .photo-note{margin:40px 0 0;text-align:center;font-size:.74rem;color:var(--muted);opacity:.85}
+  .photo-note{margin:40px 0 0;text-align:center;font-size:.74rem;color:var(--muted)}
   .photo-note a{color:inherit}
   @media (max-width:700px){#v-contatti .page-head{background-position:88% 60% !important}}
   .legal-band{position:relative;background:url(img/legale.jpg) center/cover no-repeat var(--ivory)}
@@ -156,6 +180,17 @@
   .legal-band .wrap{position:relative}
   .page-head h1{font-size:clamp(2rem,5vw,3.4rem);margin:10px 0 0}
   .page-head p.lead{max-width:640px;margin:0 auto;color:#4f5666;font-family:var(--serif);font-size:1.3rem;font-style:italic}
+
+  .doc{max-width:780px;margin:0 auto;padding:64px 0 90px}
+  .doc h2{font-size:1.25rem;margin:2.2em 0 .4em}
+  .doc p,.doc li{color:#3a4254}
+  .doc ul{padding-left:1.2em}
+  .doc .tw{overflow-x:auto}
+  .doc table{width:100%;min-width:520px;border-collapse:collapse;margin:1em 0;font-size:.95rem}
+  .doc th,.doc td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+  .doc th{background:#f3eee3;color:var(--navy)}
+  .doc h3.sub{font-size:.98rem;margin:1.4em 0 .4em}
+  .doc .upd{color:var(--muted);font-size:.9rem}
 
   /* Circolari */
   .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 26px}
@@ -236,6 +271,7 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#main-content" onclick="document.querySelector('main').focus();return false">Vai al contenuto</a>
 
 <header>
   <div class="wrap nav">
@@ -251,7 +287,7 @@
   </div>
 </header>
 
-<main>
+<main id="main-content" tabindex="-1" style="outline:0">
 <!-- ================= HOME ================= -->
 <div class="view" id="v-home">
   <div class="hero">
@@ -453,6 +489,63 @@
     </div>
   </section>
 </div>
+<!-- ================= PRIVACY ================= -->
+<div class="view" id="v-privacy">
+  <div class="page-head"><div class="wrap">
+    <div class="kicker">Informativa</div>
+    <h1>Privacy e cookie</h1>
+    <div class="rule"><i></i></div>
+  </div></div>
+  <div class="wrap"><div class="doc">
+    <p class="upd">Informativa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR), comprensiva dell'informativa sui cookie. Ultimo aggiornamento: novembre 2026.</p>
+
+    <h2>Titolare del trattamento</h2>
+    <p>Il titolare del trattamento è lo <b>Studio Picco</b>, associazione tra professionisti, con sede in Piazza della Vittoria 7/14, 16121 Genova (GE), P.IVA 01177950993.<br>
+    Email: <a href="mailto:reception@studiopicco.com">reception@studiopicco.com</a> · PEC: <a href="mailto:studiopicco@legalmail.it">studiopicco@legalmail.it</a> · Tel. 010 591418.</p>
+
+    <h2>Quali dati trattiamo</h2>
+    <ul>
+      <li><b>Dati di navigazione.</b> Come ogni sito, il servizio di hosting registra per brevi periodi dati tecnici (indirizzo IP, data e ora, pagine richieste, browser) necessari al funzionamento e alla sicurezza del sito.</li>
+      <li><b>Comunicazioni inviate dall'utente.</b> Se ci scrivi una email o ci telefoni, trattiamo i dati che ci comunichi (nome, recapiti, contenuto del messaggio) per rispondere alla tua richiesta. Il sito non contiene moduli di contatto: le email sono gestite dal nostro servizio di posta.</li>
+      <li><b>Dati di terze parti.</b> La mappa nella pagina Contatti, se accetti i cookie di terze parti, è fornita da Google (vedi la sezione Cookie).</li>
+    </ul>
+
+    <h2>Finalità e basi giuridiche</h2>
+    <ul>
+      <li>Garantire il funzionamento e la sicurezza del sito: legittimo interesse (art. 6.1.f GDPR).</li>
+      <li>Rispondere alle richieste ricevute e dare seguito a misure precontrattuali o a un incarico professionale: esecuzione di un contratto o di misure precontrattuali (art. 6.1.b).</li>
+      <li>Mostrare la mappa di Google: consenso (art. 6.1.a), revocabile in ogni momento da "Preferenze cookie".</li>
+    </ul>
+    <p>Il conferimento dei dati è facoltativo, ma senza di essi non possiamo rispondere alle richieste.</p>
+
+    <h2>Destinatari e trasferimenti</h2>
+    <p>I dati non sono diffusi. Possono essere trattati dai professionisti e dai collaboratori dello Studio e da fornitori che agiscono come responsabili del trattamento, in particolare il servizio di hosting del sito (Netlify, Inc.) e il fornitore del servizio di posta elettronica (Aruba S.p.A., con sede in Italia). Alcuni fornitori hanno sede fuori dallo Spazio economico europeo (in particolare negli Stati Uniti): in tal caso il trasferimento avviene sulla base di una decisione di adeguatezza della Commissione europea (EU-US Data Privacy Framework, a cui aderisce il fornitore) o di clausole contrattuali standard.</p>
+    <p>Le notizie nella home page sono caricate dal sito di GitHub, da cui il browser scarica un file pubblico: GitHub può quindi ricevere dati tecnici della connessione (come l'indirizzo IP). L'accesso all'area riservata allo staff avviene tramite GitHub e non riguarda i visitatori.</p>
+
+    <h2>Conservazione</h2>
+    <p>I dati tecnici di navigazione (registri di accesso, compreso l'indirizzo IP) sono conservati dal fornitore di hosting per il tempo strettamente necessario al funzionamento e alla sicurezza del servizio. Le comunicazioni sono conservate per il tempo necessario a gestire la richiesta e, se ne nasce un rapporto professionale, per i termini previsti dalla legge.</p>
+
+    <h2 id="cookie-info">Cookie</h2>
+    <p>I cookie sono piccoli file che i siti salvano nel browser. Il sito dello Studio Picco non usa cookie di profilazione né strumenti di statistica o pubblicità.</p>
+
+    <h3 class="sub">Cosa usa questo sito</h3>
+    <div class="tw"><table>
+      <tr><th>Strumento</th><th>Finalità</th><th>Tipo</th><th>Durata</th></tr>
+      <tr><td>Memoria locale del browser <code>studiopicco-cookie-consent</code></td><td>Ricordare la tua scelta sui cookie</td><td>Tecnico, necessario (non richiede consenso)</td><td>Fino a cancellazione dei dati del browser</td></tr>
+      <tr><td>Google Maps (incorporamento della mappa)</td><td>Mostrare la mappa dello Studio nella pagina Contatti</td><td>Terze parti, solo con il tuo consenso</td><td>Secondo la policy di Google</td></tr>
+    </table></div>
+    <p>Finché non accetti, la mappa non viene caricata e nessun dato è inviato a Google: compare solo un segnaposto con il pulsante "Apri in Google Maps", che apre il servizio in una nuova scheda.</p>
+    <p>I caratteri tipografici sono ospitati direttamente sul sito e non vengono scaricati da servizi esterni.</p>
+
+    <h3 class="sub">Come gestire le preferenze</h3>
+    <p>Puoi cambiare scelta in qualsiasi momento con il link "Preferenze cookie" in fondo a ogni pagina, oppure cancellando i dati del sito dalle impostazioni del browser. Se accetti, Google tratta i dati secondo la propria informativa: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.</p>
+
+    <h2>I tuoi diritti</h2>
+    <p>Puoi chiedere in qualsiasi momento l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento, la portabilità e opporti al trattamento (artt. 15-22 GDPR), scrivendo agli indirizzi indicati sopra. Puoi inoltre revocare il consenso già prestato e proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>).</p>
+    <p class="muted">Il trattamento dei dati dei clienti dello Studio nell'ambito degli incarichi professionali è disciplinato da apposita informativa consegnata al momento del conferimento dell'incarico.</p>
+  </div></div>
+</div>
+
 </main>
 
 <footer>
@@ -464,13 +557,13 @@
     </div>
     <div class="legalbar">
       <span>© <span id="y"></span> Studio Picco · P.IVA <span data-k="piva"></span></span>
-      <span><a href="#contatti">Privacy policy</a> · <a href="#contatti">Cookie policy</a> · <a href="#" id="cookie-prefs">Preferenze cookie</a> · <a href="admin/">Area staff</a></span>
+      <span><a href="#privacy">Privacy e cookie</a> · <a href="#" id="cookie-prefs">Preferenze cookie</a> · <a href="admin/">Area staff</a></span>
     </div>
   </div>
 </footer>
 
 <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Informativa sui cookie" hidden>
-  <p>Questo sito utilizza solo cookie tecnici e, previo consenso, i cookie di terze parti di Google Maps per mostrare la mappa dello Studio. Puoi modificare la scelta in qualsiasi momento da "Preferenze cookie" in fondo alla pagina. <a href="#contatti">Cookie policy</a></p>
+  <p>Questo sito utilizza solo cookie tecnici e, previo consenso, i cookie di terze parti di Google Maps per mostrare la mappa dello Studio. Puoi modificare la scelta in qualsiasi momento da "Preferenze cookie" in fondo alla pagina. <a href="#cookie-info">Informativa completa</a></p>
   <div class="btns" style="justify-content:flex-end">
     <button class="btn" data-consent="essential">Solo necessari</button>
     <button class="btn primary" data-consent="all">Accetta tutti</button>
@@ -557,7 +650,7 @@
 
   // --- Google Maps ---
   const q = encodeURIComponent(S.ricercaMappa || (S.indirizzo + " " + S.cap));
-  $("#maps-link").href = "https://www.google.com/maps/search/?api=1&query=" + q;
+  $("#maps-link").href = S.mapsUrl || ("https://www.google.com/maps/search/?api=1&query=" + q);
   function loadMap(){
     if ($("#map iframe")) return;
     $("#map").insertAdjacentHTML("beforeend", `<iframe title="Mappa: Studio Picco, Piazza della Vittoria 7/14, Genova" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${q}&z=17&output=embed"></iframe>`);
@@ -576,13 +669,16 @@
   applyConsent(getC());
 
   // --- Navigazione ---
-  const views = ["home","chi-siamo","servizi","circolari","contatti"];
+  const views = ["home","chi-siamo","servizi","circolari","contatti","privacy"];
   function route(){
-    const h = location.hash.replace("#","");
+    let h = location.hash.replace("#","");
+    const toCookie = h === "cookie-info";
+    if (toCookie) h = "privacy";
     const v = views.includes(h) ? h : "home";
     $$(".view").forEach(el => el.classList.toggle("active", el.id === "v-" + v));
     $$("nav a").forEach(a => { if (a.getAttribute("href") === "#" + v) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
     $("nav ul").classList.remove("open");
+    if (toCookie) { const c = document.getElementById("cookie-info"); if (c) { c.scrollIntoView(); return; } }
     window.scrollTo(0,0);
   }
   window.addEventListener("hashchange", route);
