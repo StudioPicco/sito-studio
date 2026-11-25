@@ -10,16 +10,27 @@ permissions:
 jobs:
   notizie:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 20
+          node-version: 24
+          package-manager-cache: false
+      - name: Recupera le notizie precedenti
+        run: |
+          mkdir -p out
+          if git fetch -q --depth=1 origin notizie; then
+            git show FETCH_HEAD:notizie.json > out/precedenti.json || echo '{"notizie":[]}' > out/precedenti.json
+          else
+            echo '{"notizie":[]}' > out/precedenti.json
+          fi
       - name: Leggi i feed
-        run: mkdir out && node scripts/aggiorna-notizie.mjs out/notizie.json
+        run: node scripts/aggiorna-notizie.mjs out/notizie.json out/precedenti.json
       - name: Pubblica sul ramo notizie
         run: |
           cd out
+          rm -f precedenti.json
           git init -q -b notizie
           git config user.name "Aggiornamento notizie"
           git config user.email "actions@users.noreply.github.com"
